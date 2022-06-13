@@ -1,0 +1,345 @@
+.header {
+  border-bottom: 1px solid rgba(231, 231, 231, 0.18);
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.4s;
+  padding-block: 1rem;
+  @include breakPoint($bp-xl) {
+    padding-block: 2rem;
+  }
+  //   Header Logo
+  &-logo {
+    font-size: 0;
+    margin-bottom: 0;
+    .navbar-brand {
+      @include Text($fz-2_xl, $fw-medium, $c-white);
+      margin: 0;
+      padding: 0;
+      @include breakPoint($bp-sm) {
+        font-size: $fz-3_xl;
+      }
+      i {
+        color: $c-primary;
+      }
+      span {
+        display: block;
+        padding-left: 3.6rem;
+        font-size: $fz-3_sm;
+        font-weight: $fw-regular;
+        opacity: 0.9;
+        margin-top: 0.4rem;
+        color: $c-white;
+        @include breakPoint($bp-sm) {
+          font-size: $fz-2_sm;
+        }
+      }
+    }
+  }
+  // Header Nav Mobile
+  .navbar-collapse {
+  }
+  //   Header Nav
+  &-nav {
+    ul.navbar-nav {
+      margin-top: 2rem;
+      @include breakPoint($bp-xl) {
+        margin-top: 0;
+      }
+      li.nav-item {
+        a.nav-link {
+          text-transform: uppercase;
+          padding: 0.4rem !important;
+          text-align: center;
+          @include breakPoint($bp-sm) {
+            padding: 0.6rem !important;
+          }
+          @include breakPoint($bp-xl) {
+            text-align: left;
+            padding: 1.2rem !important;
+          }
+        }
+        &.dropdown {
+          ul.dropdown-menu {
+            border-radius: $border-radius;
+            background-color: $c-theme-bg;
+            border: 1px solid $c-theme-border__light;
+            li {
+              a.dropdown-item {
+                color: $c-theme-heading;
+                font-weight: $fw-regular;
+                text-transform: uppercase;
+                opacity: 0.8;
+                padding: 0.6rem 2rem;
+                &.active {
+                  color: $c-primary;
+                  background-color: $c-theme-bg;
+                }
+              }
+            }
+            &[data-bs-popper] {
+              left: 0;
+              @include breakPoint($bp-lg) {
+                left: 50%;
+                transform: translateX(-50%);
+              }
+            }
+            &::before {
+              content: " ";
+              display: block;
+              // border: 10px solid transparent;
+              // border-bottom-color: $c-theme-bg;
+              position: absolute;
+              top: 22px;
+              left: 50%;
+              width: 16px;
+              height: 16px;
+              background-color: $c-theme-bg;
+              transform: translateX(-50%) rotate(45deg);
+              border: 1px solid $c-theme-border__light;
+              border-right: transparent;
+              border-bottom: transparent;
+              @include breakPoint($bp-md) {
+                top: 27px;
+              }
+              @include breakPoint($bp-lg) {
+                top: -8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // Nav Mobile Btn
+  .navbar-dark .navbar-toggler {
+    color: $c-white;
+    background-color: $c-primary;
+    padding: 0.8rem;
+    font-size: $fz-md;
+    .close {
+      display: none;
+    }
+  }
+  //   Header Search
+  &-search {
+    @include flexBox(flex-start, center);
+    height: 100%;
+    .btn {
+      display: inline-block;
+    }
+    .btn.btn--open {
+      @include radiusBlock(40px, 40px);
+      @include Text($fz-sm, $fw-light, $c-white);
+      padding: 0 !important;
+      background-color: $c-primary;
+      outline: none;
+      transform-origin: 50%;
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      @include breakPoint($bp-lg) {
+        @include radiusBlock(45px, 45px);
+      }
+      i {
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+    form {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      transition: all 0.3s ease-in-out;
+      pointer-events: none;
+      opacity: 0;
+      @include breakPoint($bp-lg) {
+        position: absolute;
+        left: 50px;
+        right: 50px;
+      }
+      input {
+        height: 100vh;
+        width: 100%;
+        outline: none;
+        font-size: 3.4rem;
+        background-color: transparent;
+        color: $c-white;
+        border: none;
+        @include breakPoint($bp-lg) {
+          font-size: 5.4rem;
+        }
+        &:focus {
+          background-color: transparent;
+          color: $c-white;
+          border: none;
+          box-shadow: none;
+        }
+        &::placeholder {
+          color: $c-white;
+        }
+      }
+      .btn.btn--close {
+        font-size: 5rem;
+        color: $c-white;
+        height: 100vh;
+        margin-right: 0;
+        margin-top: 5rem;
+        padding-inline: 3rem;
+        @include breakPoint($bp-lg) {
+          font-size: 7rem;
+          margin-right: 6rem;
+          margin-top: 6rem;
+          padding-inline: 5rem;
+        }
+        i {
+          transform: rotate(-90deg);
+          transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      }
+    }
+  }
+  &.searching {
+    .header-search {
+      .btn.btn--open {
+        transform: scale(70);
+        i {
+          opacity: 0;
+        }
+      }
+      form {
+        opacity: 1;
+        pointer-events: all;
+        .btn.btn--close {
+          i {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+  }
+  //   Header Theme
+  &-theme {
+    @include flexBox(center, center);
+    height: 100%;
+    label {
+      cursor: pointer;
+      input {
+        display: none;
+        &:checked {
+          & ~ .header-theme__icon {
+            i {
+              &.sun {
+                opacity: 1;
+                visibility: visible;
+              }
+              &.moon {
+                opacity: 0;
+                visibility: hidden;
+              }
+            }
+          }
+        }
+      }
+      .header-theme__icon {
+        position: relative;
+        i {
+          display: inline-block;
+          font-size: $fz-2_xl;
+          color: $c-white;
+          transition: 0.6s;
+          padding: 2rem;
+          &.sun {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+  }
+  &.open-nav {
+    background-color: rgba(0, 0, 0, 0.8);
+
+    .header-theme {
+      position: absolute;
+      top: 10px;
+      right: 40px;
+      align-items: flex-start;
+      height: auto;
+      @include breakPoint($bp-xl) {
+        position: inherit;
+        align-items: center;
+        height: 100%;
+      }
+      i {
+        padding: 1rem;
+        @include breakPoint($bp-xl) {
+          padding: 2rem;
+        }
+      }
+    }
+    .header-search {
+      position: absolute;
+      top: 10px;
+      right: 90px;
+      align-items: flex-start;
+      height: auto;
+
+      @include breakPoint($bp-xl) {
+        position: inherit;
+        align-items: center;
+        height: 100%;
+      }
+    }
+    .navbar-toggler .close {
+      display: block;
+    }
+    .navbar-toggler .nav {
+      display: none;
+    }
+  }
+  &.scrolling {
+    background-color: $c-theme-bg !important;
+    border-bottom: none;
+    padding-block: 0.6rem;
+    @include breakPoint($bp-xl) {
+      padding-block: 1rem;
+    }
+    .header-logo {
+      a.navbar-brand {
+        color: $c-theme-heading;
+        span {
+          color: $c-theme-heading;
+          opacity: 0.9;
+        }
+      }
+    }
+    .header-nav {
+      ul.navbar-nav {
+        li.nav-item {
+          a.nav-link {
+            color: $c-theme-heading;
+            opacity: 0.7;
+            &.active {
+              color: $c-primary;
+            }
+          }
+        }
+      }
+    }
+    .header-theme {
+      label {
+        .header-theme__icon {
+          i {
+            color: $c-theme-heading;
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+}

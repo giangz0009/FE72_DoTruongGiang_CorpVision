@@ -1,0 +1,108 @@
+.slider {
+  position: relative;
+  .carousel-item {
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $c-theme-layer;
+    }
+    img {
+      height: 550px;
+      @include breakPoint($bp-lg) {
+        height: auto;
+      }
+    }
+    .carousel-caption {
+      top: 0;
+      bottom: 0;
+      left: 15px;
+      right: 15px;
+      @include breakPoint($bp-md) {
+        left: 15%;
+        right: 15%;
+      }
+      display: flex !important;
+      flex-direction: column;
+      @include flexBox(center);
+      h1 {
+        text-align: left;
+        animation-duration: 600ms;
+        animation-delay: 1000ms;
+        @include breakPoint($bp-xl) {
+          width: 80%;
+        }
+      }
+      p {
+        text-align: left;
+        color: $c-white;
+        opacity: 0.8;
+        margin-block: 2.4rem;
+        animation-duration: 1000ms;
+        @include breakPoint($bp-xl) {
+          width: 70%;
+        }
+      }
+      div {
+        animation-duration: 600ms;
+        animation-delay: 1000ms;
+      }
+    }
+  }
+  button[class*="carousel-control-"] {
+    z-index: 12;
+    @include radiusBlock(45px, 45px);
+    color: $c-dark;
+    bottom: 50px;
+    top: inherit;
+    left: inherit;
+    background-color: $c-theme-bg;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+    border: 1px solid $c-theme-border;
+    color: $c-theme-heading;
+    font-size: 1.6rem;
+    opacity: 1;
+    transition: 0.4s;
+    @include breakPoint($bp-xl) {
+      bottom: 100px;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  .carousel-control-prev {
+    right: 80px;
+    @include breakPoint($bp-md) {
+      right: 170px;
+    }
+    @include breakPoint($bp-xl) {
+      right: 225px;
+    }
+  }
+  .carousel-control-next {
+    right: 15px;
+    @include breakPoint($bp-md) {
+      right: 100px;
+    }
+    @include breakPoint($bp-xl) {
+      right: 150px;
+    }
+  }
+  &-shape {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    svg {
+      width: 100%;
+      vertical-align: middle;
+      path {
+        fill: $c-theme-bg;
+      }
+    }
+  }
+}

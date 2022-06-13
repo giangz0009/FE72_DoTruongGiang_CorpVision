@@ -1,0 +1,63 @@
+@import "../vendors/font_jost";
+// Font Awesome
+@import "../vendors/fontAwesome";
+// import Helper
+@import "../Helper/variable";
+@import "../Helper/mixin";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // 1rem = 10px
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  body {
+    font-family: "Jost", sans-serif;
+    overflow-x: hidden;
+    .container {
+      @include breakPoint($bp-xl) {
+        max-width: 1200px;
+      }
+    }
+    h1 {
+      @include Text($fz-3_xl, $fw-bold, $c-white);
+      @include breakPoint($bp-xl) {
+        font-size: $fz-6_xl;
+      }
+    }
+    h3 {
+      @include Text($fz-4_xl, $fw-bold, $c-theme-heading);
+    }
+    p {
+      @include Text($fz-lg, $fw-light, $c-theme-heading);
+      @include breakPoint($bp-xl) {
+        font-size: $fz-1_2_xl;
+      }
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    a {
+      @include Text($fz-2_sm, $fw-regular, $c-white);
+      text-decoration: none;
+      &:link,
+      &:active,
+      &:visited {
+        text-decoration: none;
+      }
+    }
+    img {
+      max-width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    span {
+      @include Text($fz-3_sm, $fw-regular, $c-gray);
+    }
+  }
+}

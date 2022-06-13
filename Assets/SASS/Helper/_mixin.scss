@@ -1,0 +1,25 @@
+@mixin Text($fz: $fz-md, $fw: $fw-medium, $c: $c-white) {
+  font-size: $fz;
+  font-weight: $fw;
+  color: $c;
+}
+// Create an radius block width center items
+@mixin radiusBlock($width, $height) {
+  width: $width;
+  height: $height;
+  line-height: $height;
+  text-align: center;
+  border-radius: 50%;
+}
+// Flex Box
+@mixin flexBox($justify-content: flex-start, $alight-items: flex-start) {
+  display: flex;
+  align-items: $alight-items;
+  justify-content: $justify-content;
+}
+// Break Point
+@mixin breakPoint($minWidth) {
+  @media screen and (min-width: $minWidth) {
+    @content;
+  }
+}

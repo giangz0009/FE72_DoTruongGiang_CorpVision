@@ -1,0 +1,112 @@
+.footer {
+  background-color: $c-dark;
+  border-top: 1px solid rgba(231, 231, 231, 0.18);
+  overflow-x: hidden;
+  //Footer Top
+  &-top {
+    // Footer Top Item
+    &-item {
+      padding-inline: 1rem;
+      &__heading {
+        @include Text($fz-2_xl, $fw-light, $c-white);
+        letter-spacing: 0.05rem;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+      }
+      &__content {
+        p {
+          @include Text($fz-md, $fw-light, $c-gray_light);
+          line-height: 1.6;
+          @include breakPoint($bp-md) {
+            font-size: $fz-lg;
+          }
+        }
+        ul {
+          li {
+            display: block;
+            @include Text($fz-md, $fw-light, $c-gray_light);
+            padding-block: 0.3rem;
+            @include breakPoint($bp-md) {
+              font-size: $fz-lg;
+            }
+            a {
+              display: inline-block;
+              @include Text($fz-md, $fw-light, $c-gray_light);
+              opacity: 0.8;
+              transition: 0.8s;
+              @include breakPoint($bp-md) {
+                font-size: $fz-lg;
+              }
+            }
+            &:hover {
+              a {
+                color: $c-white;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      // Footer Top Item Have Logo
+      &--logo {
+        .footer-top-item__logo {
+          margin-bottom: 2.5rem;
+          a {
+            display: block;
+            @include Text($fz-2_xl, $fw-medium, $c-white);
+            @include breakPoint($bp-sm) {
+              font-size: $fz-3_xl;
+            }
+            i {
+              color: $c-primary;
+            }
+            span {
+              display: block;
+              padding-left: 3.6rem;
+              font-weight: $fw-regular;
+              font-size: $fz-3_sm;
+              opacity: 0.9;
+              margin-top: 0.6rem;
+              color: $c-white;
+              @include breakPoint($bp-sm) {
+                font-size: $fz-2_sm;
+              }
+            }
+            &:hover {
+              color: inherit;
+            }
+          }
+        }
+        .footer-top-item__content {
+          &-social {
+            li {
+              display: inline-block;
+              a {
+                display: inline-block;
+                font-size: $fz-md;
+                padding: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //   Footer Bottom
+  &-bottom {
+    border-top: 1px solid rgba(231, 231, 231, 0.18);
+    &__copy {
+      text-align: center;
+      color: $c-gray_light;
+      font-size: $fz-md;
+      &-link {
+        font-size: $fz-md;
+        color: $c-primary;
+        transition: 0.6s;
+        &:hover {
+          color: $c-white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.btn-to-top {
+  position: fixed;
+  z-index: 30;
+  bottom: 30px;
+  right: 30px;
+  @include radiusBlock(50px, 50px);
+  background-color: $c-primary;
+  color: $c-white;
+  display: inline-block;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  &:hover {
+    transform: scale(1.2);
+    color: $c-white;
+  }
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}

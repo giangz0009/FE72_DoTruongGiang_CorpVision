@@ -1,0 +1,52 @@
+@import "./theme";
+// Font size
+$fz-3_sm: 1.4rem;
+$fz-2_sm: 1.5rem;
+$fz-sm: 1.6rem;
+$fz-md: 1.7rem;
+$fz-lg: 1.8rem;
+$fz-xl: 1.9rem;
+$fz-1_2_xl: 2rem;
+$fz-2_xl: 2.2rem;
+$fz-3_xl: 3rem;
+$fz-4_xl: 3.5rem;
+$fz-5_xl: 5.4rem;
+$fz-6_xl: 6.5rem;
+
+// Font Weight
+$fw-light_extra: 300;
+$fw-light: 400;
+$fw-medium: 500;
+$fw-regular: 600;
+$fw-bold: 700;
+
+// Color
+$c-primary: #009f4d;
+$c-primary_rgb: rgb(0, 159, 77);
+$c-secondary: #213364;
+$c-secondary_rgb: rgb(33, 51, 100);
+$c-dark: #151421;
+$c-white: #fff;
+$c-gray: #7e7d7d;
+$c-gray_light: #97a1a9;
+// -----Color Theme
+$c-theme-heading: var(--heading-color);
+$c-theme-font: var(--font-color);
+$c-theme-bg: var(--bg-color);
+$c-theme-border: var(--border-color);
+$c-theme-border__light: var(--border-color-light);
+$c-theme-nav: var(--nav-color);
+$c-theme-dropdown: var(--dropdown-color);
+$transform-theme-filter: var(--iframe-filter);
+$c-theme-bg_grey: var(--bg-grey);
+$c-theme-bg_grey_light: var(--bg-lightgrey);
+$c-theme-layer: var(--layer);
+
+// Radius
+$border-radius: 0.8rem;
+
+// Break Points
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
