@@ -23,6 +23,9 @@ html {
         max-width: 1200px;
       }
     }
+    section:not(.slider) {
+      padding-block: 10rem;
+    }
     h1 {
       @include Text($fz-3_xl, $fw-bold, $c-white);
       @include breakPoint($bp-xl) {
