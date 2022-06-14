@@ -53,6 +53,10 @@ html body {
   }
 }
 
+html body section:not(.slider) {
+  padding-block: 10rem;
+}
+
 html body h1 {
   font-size: 3rem;
   font-weight: 700;
