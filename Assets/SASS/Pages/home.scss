@@ -60,6 +60,68 @@
   }
 }
 
+// Feature
+.feature {
+  background-color: $c-theme-bg_grey;
+  // Feature Left
+  &-left {
+    &__content {
+      p {
+        @include Text($fz-md, $fw-light, $c-theme-font);
+        line-height: 2.7rem;
+        opacity: 0.8;
+      }
+      &-btn {
+        margin-top: 4.8rem;
+      }
+    }
+  }
+  // Feature Right
+  &-right {
+    &-item {
+      position: relative;
+      background-color: $c-theme-bg;
+      box-shadow: rgba(1, 1, 1, 0.05) 1px 1px 5px 0px;
+      border-radius: $border-radius;
+      transition: 0.3s;
+      &__wrap {
+        padding: 4rem 3rem;
+        @include flexBox(center, center);
+        flex-direction: column;
+      }
+      &__icon {
+        color: $c-primary;
+        font-size: $fz-5_xl;
+      }
+      &__text {
+        p {
+          margin-top: 2.5rem;
+          @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
+          line-height: 2.8rem;
+          transition: 0.3s;
+        }
+      }
+      &__link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        text-indent: -1000rem;
+      }
+      &:hover {
+        box-shadow: rgba(46, 41, 51, 0.08) 0px 2px 4px,
+          rgba(71, 63, 79, 0.16) 0px 5px 10px;
+        transform: translateY(-0.4rem);
+        .feature-right-item__text p {
+          color: $c-primary;
+        }
+      }
+    }
+  }
+}
+
 @import "../Layouts/footer";
 @import "../Components/btnToTop";
 @import "../Components/headingBlock";
