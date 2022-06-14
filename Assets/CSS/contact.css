@@ -127,6 +127,7 @@ html body span {
   transition: 0.5s;
   border-radius: 0.8rem;
   outline: none;
+  text-transform: capitalize;
 }
 
 .btn.btn-pri {
