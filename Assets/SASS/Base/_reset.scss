@@ -26,6 +26,12 @@ html {
     section:not(.slider) {
       padding-block: 10rem;
     }
+    section:nth-child(odd):not(.slider) {
+      background-color: $c-theme-bg;
+    }
+    section:nth-child(even):not(.slider) {
+      background-color: $c-theme-bg_grey;
+    }
     h1 {
       @include Text($fz-3_xl, $fw-bold, $c-white);
       @include breakPoint($bp-xl) {

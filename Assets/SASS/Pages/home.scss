@@ -122,6 +122,20 @@
   }
 }
 
+// Gallery
+.gallery {
+  &-footer {
+    &-wrap {
+      border-top: 1px solid $c-theme-border__light;
+    }
+    &-item {
+      padding-inline: 1rem;
+    }
+  }
+}
+
 @import "../Layouts/footer";
 @import "../Components/btnToTop";
 @import "../Components/headingBlock";
+@import "../Components/cardItem";
+@import "../Components/cardImgBottom";

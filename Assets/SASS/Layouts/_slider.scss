@@ -24,6 +24,7 @@
       @include breakPoint($bp-md) {
         left: 15%;
         right: 15%;
+        transform: translateY(-4rem);
       }
       display: flex !important;
       flex-direction: column;

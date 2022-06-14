@@ -57,6 +57,14 @@ html body section:not(.slider) {
   padding-block: 10rem;
 }
 
+html body section:nth-child(odd):not(.slider) {
+  background-color: var(--bg-color);
+}
+
+html body section:nth-child(even):not(.slider) {
+  background-color: var(--bg-grey);
+}
+
 html body h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -661,6 +669,8 @@ html body span {
   .slider .carousel-item .carousel-caption {
     left: 15%;
     right: 15%;
+    -webkit-transform: translateY(-4rem);
+            transform: translateY(-4rem);
   }
 }
 

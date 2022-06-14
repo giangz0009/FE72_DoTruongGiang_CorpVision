@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   &__img {
+    overflow: hidden;
     img {
       transition: 0.4s;
     }
@@ -45,6 +46,11 @@
     display: none;
   }
   &:hover {
+    .card-img-bottom__img {
+      img {
+        transform: scale(1.1);
+      }
+    }
     .card-img-bottom__overlay {
       opacity: 1;
       visibility: visible;
