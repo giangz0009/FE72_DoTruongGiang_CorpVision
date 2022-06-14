@@ -4,5 +4,61 @@
 @import "../Layouts/header";
 @import "../Layouts/slider";
 
+// About Us
+.about-us {
+  background-color: $c-theme-bg;
+  // Left
+  &-left {
+    &__content {
+      p {
+        @include Text($fz-md, $fw-light, $c-theme-font);
+        line-height: 2.7rem;
+        opacity: 0.8;
+      }
+      ul {
+        margin-top: 0.8rem;
+        li {
+          a {
+            display: block;
+            @include Text($fz-lg, $fw-regular, $c-theme-heading);
+            padding-block: 0.8rem;
+            line-height: 2.8rem;
+            i {
+              display: inline-block;
+              color: $c-primary;
+              opacity: 0.8;
+              margin-right: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  // Right
+  &-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    --start-col-pos: auto;
+    --end-col-pos: auto;
+    --start-row-pos: auto;
+    --end-row-pos: auto;
+    &__item {
+      grid-column: var(--start-col-pos) / var(--end-col-pos);
+      grid-row: var(--start-row-pos) / var(--end-row-pos);
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: $border-radius;
+      }
+      &:first-child {
+        img {
+          transform: translateY(-25px);
+        }
+      }
+    }
+  }
+}
+
 @import "../Layouts/footer";
 @import "../Components/btnToTop";
