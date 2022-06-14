@@ -128,6 +128,7 @@ html body span {
   border-radius: 0.8rem;
   outline: none;
   text-transform: capitalize;
+  color: var(--heading-color);
 }
 
 .btn.btn-pri {
@@ -145,6 +146,10 @@ html body span {
     padding: 1.5rem 5rem;
     font-size: 1.8rem;
   }
+}
+
+.btn:hover {
+  color: #009f4d;
 }
 
 .header {
