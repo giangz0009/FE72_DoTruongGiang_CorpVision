@@ -940,6 +940,10 @@ html body span {
   visibility: visible;
 }
 
+.heading-block {
+  margin-bottom: 2.4rem;
+}
+
 .heading-block span {
   display: block;
   font-size: 1.4rem;

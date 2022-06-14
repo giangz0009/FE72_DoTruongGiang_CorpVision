@@ -1,4 +1,5 @@
 .heading-block {
+  margin-bottom: 2.4rem;
   span {
     display: block;
     @include Text($fz-3_sm, $fw-regular, $c-gray);
