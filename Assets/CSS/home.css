@@ -131,6 +131,10 @@ html body span {
   color: var(--heading-color);
 }
 
+.btn:hover {
+  color: #009f4d;
+}
+
 .btn.btn-pri {
   border-color: #009f4d;
   background-color: rgba(0, 159, 77, 0.8);
@@ -138,6 +142,7 @@ html body span {
 }
 
 .btn.btn-pri:hover {
+  color: #fff;
   background-color: #009f4d;
 }
 
@@ -146,10 +151,6 @@ html body span {
     padding: 1.5rem 5rem;
     font-size: 1.8rem;
   }
-}
-
-.btn:hover {
-  color: #009f4d;
 }
 
 .header {

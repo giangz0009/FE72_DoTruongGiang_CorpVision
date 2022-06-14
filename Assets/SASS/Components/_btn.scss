@@ -9,19 +9,20 @@
   outline: none;
   text-transform: capitalize;
   color: $c-theme-heading;
+  &:hover {
+    color: $c-primary;
+  }
   &.btn-pri {
     border-color: $c-primary;
     background-color: rgba($c-primary_rgb, 0.8);
     color: $c-white;
     &:hover {
+      color: $c-white;
       background-color: rgba($c-primary_rgb, 1);
     }
   }
   @include breakPoint($bp-md) {
     padding: 1.5rem 5rem;
     font-size: $fz-lg;
-  }
-  &:hover {
-    color: $c-primary;
   }
 }
