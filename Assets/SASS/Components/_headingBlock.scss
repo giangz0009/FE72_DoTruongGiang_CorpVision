@@ -8,8 +8,16 @@
     letter-spacing: 0.1rem;
   }
   h3 {
-    @include Text($fz-4_xl, $fw-bold, $c-theme-heading);
-    line-height: 4.5rem;
+    @include Text(2.6rem, $fw-bold, $c-theme-heading);
+    line-height: 3.2rem;
+    @include breakPoint($bp-sm) {
+      font-size: $fz-3_xl;
+      line-height: 4rem;
+    }
+    @include breakPoint($bp-xl) {
+      font-size: $fz-4_xl;
+      line-height: 4.5rem;
+    }
   }
   &.heading-block--center {
     span {

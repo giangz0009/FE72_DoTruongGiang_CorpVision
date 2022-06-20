@@ -23,3 +23,13 @@
     @content;
   }
 }
+
+// Limit Line Text
+@mixin limitLine($line: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line; /* number of lines to show */
+  line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

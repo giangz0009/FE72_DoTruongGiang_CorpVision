@@ -20,9 +20,13 @@
         li {
           a {
             display: block;
-            @include Text($fz-lg, $fw-regular, $c-theme-heading);
-            padding-block: 0.8rem;
+            @include Text($fz-sm, $fw-regular, $c-theme-heading);
+            padding-block: 0.4rem;
             line-height: 2.8rem;
+            @include breakPoint($bp-sm) {
+              padding-block: 0.8rem;
+              font-size: $fz-lg;
+            }
             i {
               display: inline-block;
               color: $c-primary;
@@ -72,7 +76,10 @@
         opacity: 0.8;
       }
       &-btn {
-        margin-top: 4.8rem;
+        margin-top: 3rem;
+        @include breakPoint($bp-lg) {
+          margin-top: 4.8rem;
+        }
       }
     }
   }
@@ -85,20 +92,29 @@
       border-radius: $border-radius;
       transition: 0.3s;
       &__wrap {
-        padding: 4rem 3rem;
+        padding: 2.4rem 1.6rem;
         @include flexBox(center, center);
         flex-direction: column;
+        @include breakPoint($bp-lg) {
+          padding: 4rem 3rem;
+        }
       }
       &__icon {
         color: $c-primary;
-        font-size: $fz-5_xl;
+        font-size: $fz-4_xl;
+        @include breakPoint($bp-sm) {
+          font-size: $fz-5_xl;
+        }
       }
       &__text {
         p {
           margin-top: 2.5rem;
-          @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
+          @include Text($fz-lg, $fw-regular, $c-theme-heading);
           line-height: 2.8rem;
           transition: 0.3s;
+          @include breakPoint($bp-sm) {
+            font-size: $fz-2_xl;
+          }
         }
       }
       &__link {
@@ -225,8 +241,11 @@
   &-main {
     &-content {
       margin: auto;
-      padding: 4rem 3rem;
+      padding-block: 2rem;
       max-width: 900px;
+      @include breakPoint($bp-lg) {
+        padding: 4rem 3rem;
+      }
       p {
         @include Text($fz-lg, $fw-light, $c-theme-font);
         line-height: 1.8;
@@ -260,6 +279,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 3rem;
       .owl-dot {
         padding: 0.1rem 0.6rem !important;
         span {
@@ -283,6 +303,126 @@
           }
         }
       }
+    }
+  }
+}
+
+// New
+.new {
+  &-main {
+    margin-top: 4.8rem;
+    &-item {
+      border: 1px solid $c-theme-border;
+      box-shadow: 0 25px 98px 0 rgba(0, 0, 0, 0.04);
+      &-author {
+        @include flexBox(space-between, center);
+        &__blog-meta {
+          flex: 1;
+          padding-inline: 1rem;
+          margin-bottom: 0;
+          li {
+            span {
+              @include Text($fz-2_sm, $fw-regular, $c-theme-font);
+              opacity: 0.6;
+            }
+            a {
+              @include Text($fz-sm, $fw-regular, $c-theme-heading);
+              margin-left: 0.4rem;
+              transition: 0.4s;
+              &:hover {
+                color: $c-primary;
+              }
+            }
+          }
+        }
+        &__date {
+          p {
+            margin-bottom: 0;
+            @include Text($fz-2_sm, $fw-light, $c-theme-font);
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Newsletter
+.newsletter {
+  background-image: url(../Images/map.png) !important;
+  background-color: #151421 !important;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  // Header
+  &-header {
+    text-align: center;
+    h3 {
+      color: $c-white;
+      margin-bottom: 2rem;
+      font-size: 2.6rem;
+      @include breakPoint($bp-lg) {
+        font-size: $fz-4_xl;
+      }
+    }
+    p {
+      color: $c-white;
+      max-width: 700px;
+      opacity: 0.7;
+      margin: auto;
+      font-size: $fz-md;
+    }
+  }
+  // Main
+  &-main {
+    margin-top: 6rem;
+    &-wrap {
+      max-width: 600px;
+      margin: auto;
+      @include flexBox(flex-start, center);
+      background-color: rgba(0, 0, 0, 0.25);
+      label {
+        display: inline-block;
+        padding: 1.2rem 1.5rem;
+        color: #999;
+        font-size: $fz-sm;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+        cursor: pointer;
+      }
+      &__input-group {
+        flex: 1;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          padding: 1.2rem 2rem;
+          font-size: $fz-sm;
+          color: $c-white;
+        }
+      }
+      button.btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+// Light Box
+#lightbox {
+  .lb-dataContainer {
+    padding-block: 2rem;
+    .lb-caption {
+      @include Text($fz-lg, $fw-regular, $c-white);
+    }
+    .lb-number {
+      @include Text($fz-md, $fw-light, $c-primary);
+      margin-top: 2rem;
     }
   }
 }

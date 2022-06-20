@@ -24,7 +24,10 @@ html {
       }
     }
     section:not(.slider) {
-      padding-block: 10rem;
+      padding-block: 4.8rem;
+      @include breakPoint($bp-lg) {
+        padding-block: 10rem;
+      }
     }
     section:nth-child(odd):not(.slider) {
       background-color: $c-theme-bg;
