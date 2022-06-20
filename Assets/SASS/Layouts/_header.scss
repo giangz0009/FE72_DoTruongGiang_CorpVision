@@ -303,6 +303,7 @@
     background-color: $c-theme-bg !important;
     border-bottom: none;
     padding-block: 0.6rem;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
     @include breakPoint($bp-xl) {
       padding-block: 1rem;
     }
