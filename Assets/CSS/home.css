@@ -94,11 +94,14 @@ html body p {
   font-weight: 400;
   color: var(--font-color);
   opacity: 0.8;
+  line-height: 1.4;
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 1200px) {
   html body p {
     font-size: 1.7rem;
+    line-height: 1.6;
   }
 }
 

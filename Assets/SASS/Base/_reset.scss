@@ -47,8 +47,11 @@ html {
     p {
       @include Text($fz-sm, $fw-light, $c-theme-font);
       opacity: 0.8;
+      line-height: 1.4;
+      margin-bottom: 0;
       @include breakPoint($bp-xl) {
         font-size: $fz-md;
+        line-height: 1.6;
       }
     }
     ul {

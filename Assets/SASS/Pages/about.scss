@@ -8,21 +8,31 @@
 .slider {
   .carousel-item {
     img {
-      height: 385px;
+      height: 268px;
       object-position: top;
+      @include breakPoint($bp-lg) {
+        height: 385px;
+      }
     }
   }
   .carousel-caption {
     transform: translateY(4rem) !important;
     h1 {
       width: 100% !important;
-      font-size: 5rem !important;
+      font-size: $fz-3_xl !important;
       text-align: center !important;
+      @include breakPoint($bp-lg) {
+        font-size: 5rem !important;
+      }
     }
     p {
       width: 100% !important;
       opacity: 0.6 !important;
       text-align: center !important;
+      margin-block: 0.8rem !important;
+      @include breakPoint($bp-lg) {
+        margin-block: 2.4rem !important;
+      }
     }
   }
 }
@@ -55,10 +65,10 @@
       &__info {
         position: absolute;
         z-index: 5;
-        right: 0;
+        right: 20%;
         bottom: 0;
-        min-width: 200px;
-        min-height: 200px;
+        min-width: 100px;
+        min-height: 100px;
         box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.2);
         background-color: $c-primary;
         border-radius: $border-radius;
@@ -66,16 +76,32 @@
         @include flexBox(center, center);
         flex-direction: column;
         transform: translateX(25%) rotate(-45deg);
-        padding: 3.5rem;
+        padding: 2rem;
+        @include breakPoint($bp-md) {
+          min-width: 200px;
+          min-height: 200px;
+          padding: 3.5rem;
+          right: 20%;
+        }
+        @include breakPoint($bp-xl) {
+          right: 0;
+        }
         &-content {
           transform: rotate(45deg);
           h3 {
             color: $c-white;
+            font-size: $fz-3_xl;
+            @include breakPoint($bp-lg) {
+              font-size: $fz-4_xl;
+            }
           }
           p {
             color: $c-white;
             opacity: 0.8;
-            font-size: $fz-2_xl;
+            font-size: $fz-1_2_xl;
+            @include breakPoint($bp-lg) {
+              font-size: $fz-2_xl;
+            }
           }
         }
       }
@@ -83,6 +109,10 @@
   }
   // Company Right
   &-right {
+    margin-top: 4.8rem;
+    @include breakPoint($bp-lg) {
+      margin-top: 0;
+    }
     // Company Right Main
     &-main {
       margin-top: 2.4rem;
@@ -105,12 +135,16 @@
       }
       &__play-video {
         display: inline-flex;
-        width: 7rem;
-        height: 7rem;
+        width: 5.5rem;
+        height: 5.5rem;
         align-items: center;
         justify-content: center;
         border: 3px solid $c-primary;
         border-radius: 50%;
+        @include breakPoint($bp-lg) {
+          width: 7rem;
+          height: 7rem;
+        }
         span {
           display: inline-block;
           color: $c-primary;
@@ -127,7 +161,10 @@
   }
   //   Company Footer
   &-footer {
-    margin-top: 10rem;
+    margin-top: 4.8rem;
+    @include breakPoint($bp-lg) {
+      margin-top: 10rem;
+    }
     &-item {
       background-color: $c-theme-bg_grey;
       overflow: hidden;
@@ -137,20 +174,31 @@
       position: relative;
       &__icon {
         h1 {
-          font-size: $fz-4_xl;
+          font-size: $fz-3_xl;
           color: $c-primary;
-          width: 6rem;
+          width: 4rem;
+          @include breakPoint($bp-lg) {
+            width: 6rem;
+            font-size: $fz-4_xl;
+          }
         }
       }
       &__content {
         flex: 1;
-        min-height: 140px;
+        min-height: 100px;
+        @include breakPoint($bp-lg) {
+          min-height: 140px;
+        }
         h3 {
-          @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
-          margin-bottom: 1.5rem;
+          @include Text($fz-1-2_xl, $fw-regular, $c-theme-heading);
+          margin-bottom: 1rem;
           line-height: 1.6;
           @include limitLine;
           transition: 0.4s;
+          @include breakPoint($bp-lg) {
+            font-size: $fz-2_xl;
+            margin-bottom: 1.5rem;
+          }
         }
         p {
           @include Text($fz-md, $fw-light, $c-theme-font);
@@ -184,11 +232,18 @@
       padding-top: 2.4rem;
       &-item {
         h1 {
-          @include Text($fz-4_xl, $fw-light, $c-primary);
+          @include Text($fz-3_xl, $fw-light, $c-primary);
+          @include breakPoint($bp-lg) {
+            font-size: $fz-4_xl;
+          }
         }
         h3 {
-          @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
-          margin-block: 2.4rem;
+          @include Text($fz-1-2_xl, $fw-regular, $c-theme-heading);
+          margin-block: 1rem;
+          @include breakPoint($bp-lg) {
+            margin-block: 2.4rem;
+            font-size: $fz-2_xl;
+          }
         }
         p {
           @include Text($fz-md, $fw-light, $c-theme-font);
@@ -230,21 +285,30 @@
     max-width: 700px;
     margin: auto;
     h3 {
-      @include Text($fz-4_xl, $fw-regular, $c-white);
+      @include Text($fz-2_xl, $fw-regular, $c-white);
+      @include breakPoint($bp-lg) {
+        font-size: $fz-4_xl;
+      }
     }
     p {
       @include Text($fz-sm, $fw-light, $c-white);
       opacity: 0.8;
-      margin-block: 2.4rem;
+      margin-block: 1rem;
+      @include breakPoint($bp-lg) {
+        margin-block: 2.4rem;
+      }
     }
     &__play {
       &-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        @include radiusBlock(7rem, 7rem);
+        @include radiusBlock(5.5rem, 5.5rem);
         border: 3px solid $c-white;
         transition: 0.4s;
+        @include breakPoint($bp-lg) {
+          @include radiusBlock(7rem, 7rem);
+        }
         span {
           font-size: $fz-2_xl;
           color: $c-white;
@@ -262,6 +326,10 @@
   &-main {
     padding-top: 2.4rem;
     &-item {
+      padding-inline: 1rem;
+      @include breakPoint($bp-lg) {
+        padding-inline: 0;
+      }
       .card-img-bottom {
         border-radius: $border-radius;
         &__overlay {
@@ -322,7 +390,10 @@
   // Why Chose Header
   .heading-block {
     .container {
-      max-width: 730px;
+      max-width: 510px;
+      @include breakPoint($bp-lg) {
+        max-width: 730px;
+      }
     }
   }
   // Why Chose Main
@@ -334,23 +405,34 @@
       &__icon {
         h3 {
           @include flexBox(center, center);
-          width: 80px;
-          height: 80px;
+          width: 62px;
+          height: 62px;
           border: 1px solid $c-primary;
           border-radius: $border-radius;
           color: $c-primary;
           font-size: $fz-3_xl;
+          @include breakPoint($bp-sm) {
+            width: 80px;
+            height: 80px;
+          }
         }
       }
       &__content {
-        padding-left: 4rem;
+        padding-left: 2rem;
+        @include breakPoint($bp-lg) {
+          padding-left: 4rem;
+        }
         h3 {
           font-size: 0;
           a {
             display: block;
-            @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
+            @include Text($fz-1-2_xl, $fw-regular, $c-theme-heading);
             transition: 0.4s;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            @include breakPoint($bp-lg) {
+              font-size: $fz-2_xl;
+              margin-bottom: 2rem;
+            }
             &:hover {
               color: $c-primary;
             }
@@ -399,13 +481,19 @@
   &-left {
     .heading-block {
       p {
-        margin-top: 2.4rem;
+        margin-top: 1rem;
+        @include breakPoint($bp-lg) {
+          margin-top: 2.4rem;
+        }
       }
     }
   }
   &-right {
-    @include flexBox(flex-end, center);
+    @include flexBox(flex-start, center);
     height: 100%;
+    @include breakPoint($bp-lg) {
+      justify-content: flex-end;
+    }
     a.btn {
       i {
         margin-left: 1rem;
