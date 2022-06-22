@@ -257,6 +257,163 @@
   }
 }
 
+// Professional
+.professional {
+  &-main {
+    padding-top: 2.4rem;
+    &-item {
+      .card-img-bottom {
+        border-radius: $border-radius;
+        &__overlay {
+          background-color: rgba(20, 20, 20, 0.7);
+        }
+        &__content {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          top: 0;
+          p {
+            text-align: center;
+            color: $c-white;
+            font-size: $fz-1_2_xl;
+          }
+          ul {
+            @include flexBox(space-between, flex-start);
+            li {
+              display: inline-block;
+              a {
+                display: inline-flex;
+                @include radiusBlock(37px, 37px);
+                align-items: center;
+                justify-content: center;
+                transition: 0.4s;
+                &:hover {
+                  color: $c-white;
+                  background-color: rgba(255, 255, 255, 0.3);
+                }
+              }
+            }
+          }
+        }
+      }
+      &__title {
+        margin-top: 2.4rem;
+        h3 {
+          a {
+            display: block;
+            @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
+            text-align: center;
+            transition: 0.4s;
+            &:hover {
+              color: $c-primary;
+            }
+          }
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// Why Chose
+.why-chose {
+  // Why Chose Header
+  .heading-block {
+    .container {
+      max-width: 730px;
+    }
+  }
+  // Why Chose Main
+  &-main {
+    padding-top: 2.4rem;
+    &-item {
+      @include flexBox(space-between, center);
+      min-height: 110px;
+      &__icon {
+        h3 {
+          @include flexBox(center, center);
+          width: 80px;
+          height: 80px;
+          border: 1px solid $c-primary;
+          border-radius: $border-radius;
+          color: $c-primary;
+          font-size: $fz-3_xl;
+        }
+      }
+      &__content {
+        padding-left: 4rem;
+        h3 {
+          font-size: 0;
+          a {
+            display: block;
+            @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
+            transition: 0.4s;
+            margin-bottom: 2rem;
+            &:hover {
+              color: $c-primary;
+            }
+          }
+        }
+        p {
+          @include limitLine;
+        }
+      }
+    }
+    .col:nth-child(4n + 2) {
+      .why-chose-main-item {
+        &__icon {
+          h3 {
+            border-color: $c-secondary;
+            color: $c-secondary;
+          }
+        }
+      }
+    }
+    .col:nth-child(4n + 3) {
+      .why-chose-main-item {
+        &__icon {
+          h3 {
+            border-color: #ff4c4c;
+            color: #ff4c4c;
+          }
+        }
+      }
+    }
+    .col:nth-child(4n + 4) {
+      .why-chose-main-item {
+        &__icon {
+          h3 {
+            border-color: #f48924;
+            color: #f48924;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Co-operate
+.co-operate {
+  &-left {
+    .heading-block {
+      p {
+        margin-top: 2.4rem;
+      }
+    }
+  }
+  &-right {
+    @include flexBox(flex-end, center);
+    height: 100%;
+    a.btn {
+      i {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
 // Magnific Popup
 .mfp-content {
   max-width: 750px !important;
@@ -270,3 +427,4 @@
 @import "../Layouts/footer";
 @import "../Components/btnToTop";
 @import "../Components/headingBlock";
+@import "../Components/cardImgBottom";

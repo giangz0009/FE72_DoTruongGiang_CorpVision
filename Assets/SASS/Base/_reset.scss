@@ -45,9 +45,10 @@ html {
       @include Text($fz-4_xl, $fw-bold, $c-theme-heading);
     }
     p {
-      @include Text($fz-lg, $fw-light, $c-theme-heading);
+      @include Text($fz-sm, $fw-light, $c-theme-font);
+      opacity: 0.8;
       @include breakPoint($bp-xl) {
-        font-size: $fz-1_2_xl;
+        font-size: $fz-md;
       }
     }
     ul {
