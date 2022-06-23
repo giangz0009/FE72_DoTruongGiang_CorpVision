@@ -1,8 +1,311 @@
 @import "../Base/reset";
+html body section:nth-child(odd):not(.slider) {
+  background-color: $c-theme-bg_grey;
+}
+html body section:nth-child(even):not(.slider) {
+  background-color: $c-theme-bg;
+}
 @import "../Components/btn";
 
 @import "../Layouts/header";
 @import "../Layouts/slider";
 
+// Slider
+.slider {
+  .carousel-item {
+    img {
+      height: 268px;
+      object-position: top;
+      @include breakPoint($bp-lg) {
+        height: 385px;
+      }
+    }
+  }
+  .carousel-caption {
+    transform: translateY(4rem) !important;
+    h1 {
+      width: 100% !important;
+      font-size: $fz-3_xl !important;
+      text-align: center !important;
+      @include breakPoint($bp-lg) {
+        font-size: 5rem !important;
+      }
+    }
+    p {
+      width: 100% !important;
+      opacity: 0.6 !important;
+      text-align: center !important;
+      margin-block: 0.8rem !important;
+      @include breakPoint($bp-lg) {
+        margin-block: 2.4rem !important;
+      }
+    }
+  }
+}
+
+// Introduce
+.introduce {
+  .heading-block {
+    .container {
+      max-width: 800px;
+    }
+  }
+  &-main {
+    margin-top: 4.8rem;
+    .col {
+      .introduce-main-item {
+        background-color: $c-theme-bg;
+        text-align: center;
+        overflow: hidden;
+        border-radius: $border-radius;
+        padding: 4.5rem 5rem;
+        display: flex;
+        justify-content: center;
+        align-content: space-between;
+        flex-direction: column;
+        min-height: 385px;
+        &__header {
+          font-size: $fz-4_xl;
+          color: $c-primary;
+        }
+        &__main {
+          h3 {
+            font-size: $fz-3_xl;
+          }
+          p {
+            margin-block: 2.4rem;
+          }
+        }
+        &__footer {
+          margin-top: 2.4rem;
+        }
+      }
+      &:nth-child(4n + 2) {
+        .introduce-main-item {
+          padding: 0;
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+      &:nth-child(4n + 3) {
+        .introduce-main-item {
+          padding: 0;
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Industry
+.industry {
+  &-main {
+    &-item {
+      background-color: $c-theme-bg_grey;
+      border-radius: $border-radius;
+      padding: 5rem 3.5rem;
+      @include flexBox(space-between, flex-start);
+      position: relative;
+      &__icon {
+        width: 40px;
+        @include Text($fz-3_xl, $fw-regular, $c-primary);
+      }
+      &__content {
+        flex: 1;
+        padding-left: 2.4rem;
+        h3 {
+          font-size: $fz-2_xl;
+          font-weight: $fw-regular;
+          transition: 0.4s;
+        }
+        p {
+          @include limitLine;
+        }
+      }
+      &__link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+      }
+      &:hover {
+        h3 {
+          color: $c-primary;
+        }
+      }
+    }
+  }
+}
+
+// Contact
+.contact {
+  background-image: url("../Images/bg1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  &::before {
+    content: " ";
+    display: block;
+    background-color: $c-theme-layer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  // Contact Left
+  &-left {
+    position: relative;
+    // Contact Left Header
+    &-header {
+      span {
+        color: $c-white !important;
+      }
+      h3 {
+        color: $c-white !important;
+      }
+    }
+    // Contact Left Main
+    &-main {
+      &-item {
+        @include flexBox(flex-start, center);
+        color: $c-white;
+        padding-block: 2.4rem;
+        border-bottom: 1px solid #aaa;
+        &:last-child {
+          border-bottom: none;
+        }
+        &__icon {
+          font-size: $fz-4_xl;
+        }
+        &__content {
+          padding-left: 2.4rem;
+          h3 {
+            @include Text($fz-1_2_xl, $fw-regular, $c-white);
+          }
+          p {
+            @include Text($fz-lg, $fw-light, $c-white);
+            padding-top: 1.2rem;
+            @include limitLine;
+            a {
+              @include Text($fz-lg, $fw-light, $c-white);
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
+  // Contact Right
+  &-right {
+    position: relative;
+    padding: 6rem;
+    border-radius: $border-radius;
+    background-color: $c-theme-bg;
+    // Contact Right Header
+    &-header {
+      h3 {
+        font-size: $fz-3_xl;
+        font-weight: $fw-regular;
+      }
+      p {
+        margin-block: 1.2rem;
+      }
+    }
+    // Contact Right Main
+    &-main {
+      &__input {
+        margin-bottom: 2.4rem;
+        background-color: $c-theme-bg_grey;
+        border-radius: $border-radius;
+        overflow: hidden;
+        font-size: $fz-md;
+        input {
+          display: block;
+          width: 100%;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          padding: 1.6rem 2.5rem;
+        }
+        textarea {
+          display: block;
+          width: 100%;
+          border: none;
+          outline: none;
+          padding: 1.2rem 2.5rem;
+          background-color: transparent;
+        }
+      }
+    }
+    // Contact Right Footer
+    &-footer {
+    }
+  }
+}
+
+// Identity
+.identity {
+  background-color: $c-theme-bg_grey !important;
+  .heading-block {
+    .container {
+      max-width: 800px;
+    }
+  }
+  //   Identity Main
+  &-main {
+    margin-top: 4.8rem;
+    &-item {
+      position: relative;
+      border-radius: $border-radius;
+      padding: 4rem 3rem;
+      background-color: $c-theme-bg;
+      text-align: center;
+      box-shadow: rgba(1, 1, 1, 0.05) 1px 1px 5px 0px;
+      transition: 0.4s;
+      &__icon {
+        font-size: $fz-5_xl;
+        color: $c-primary;
+      }
+      &__content {
+        h3 {
+          @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
+          transition: 0.4s;
+        }
+        p {
+          margin-top: 2.4rem;
+          @include limitLine(3);
+        }
+      }
+      &__link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+      }
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: rgba(46, 41, 51, 0.08) 0px 2px 4px,
+          rgba(71, 63, 79, 0.16) 0px 5px 10px;
+        h3 {
+          color: $c-primary;
+        }
+      }
+    }
+  }
+}
+
 @import "../Layouts/footer";
 @import "../Components/btnToTop";
+@import "../Components/headingBlock";
