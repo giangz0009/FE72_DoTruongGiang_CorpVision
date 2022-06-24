@@ -1745,6 +1745,10 @@ html body span {
   text-align: center;
 }
 
+.heading-block.heading-block--center p {
+  text-align: center;
+}
+
 .card-img-bottom {
   position: relative;
   overflow: hidden;

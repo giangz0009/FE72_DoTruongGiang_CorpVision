@@ -1522,3 +1522,7 @@ html body section:nth-child(even):not(.slider) {
 .heading-block.heading-block--center h3 {
   text-align: center;
 }
+
+.heading-block.heading-block--center p {
+  text-align: center;
+}
