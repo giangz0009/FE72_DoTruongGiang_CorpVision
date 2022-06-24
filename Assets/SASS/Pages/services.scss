@@ -47,7 +47,9 @@ html body section:nth-child(even):not(.slider) {
 .introduce {
   .heading-block {
     .container {
-      max-width: 800px;
+      @include breakPoint($bp-lg) {
+        max-width: 800px;
+      }
     }
   }
   &-main {
@@ -58,26 +60,45 @@ html body section:nth-child(even):not(.slider) {
         text-align: center;
         overflow: hidden;
         border-radius: $border-radius;
-        padding: 4.5rem 5rem;
+        padding: 3.5rem 2rem;
         display: flex;
         justify-content: center;
         align-content: space-between;
         flex-direction: column;
-        min-height: 385px;
+        min-height: 200px;
+        @include breakPoint($bp-lg) {
+          height: 100%;
+          padding: 4.5rem 5rem;
+          img {
+            height: 100%;
+          }
+        }
+        @include breakPoint($bp-xl) {
+          min-height: 385px;
+        }
         &__header {
           font-size: $fz-4_xl;
           color: $c-primary;
         }
         &__main {
           h3 {
-            font-size: $fz-3_xl;
+            font-size: $fz-2_xl;
+            @include breakPoint($bp-lg) {
+              font-size: $fz-3_xl;
+            }
           }
           p {
-            margin-block: 2.4rem;
+            margin-block: 1.2rem;
+            @include breakPoint($bp-lg) {
+              margin-block: 2.4rem;
+            }
           }
         }
         &__footer {
-          margin-top: 2.4rem;
+          margin-top: 1.2rem;
+          @include breakPoint($bp-lg) {
+            margin-top: 2.4rem;
+          }
         }
       }
       &:nth-child(4n + 2) {
@@ -108,23 +129,36 @@ html body section:nth-child(even):not(.slider) {
     &-item {
       background-color: $c-theme-bg_grey;
       border-radius: $border-radius;
-      padding: 5rem 3.5rem;
+      padding: 3rem 2.5rem;
       @include flexBox(space-between, flex-start);
       position: relative;
+      @include breakPoint($bp-lg) {
+        padding: 5rem 3.5rem;
+      }
       &__icon {
-        width: 40px;
-        @include Text($fz-3_xl, $fw-regular, $c-primary);
+        width: 30px;
+        @include Text($fz-2_xl, $fw-regular, $c-primary);
+        @include breakPoint($bp-lg) {
+          width: 40px;
+          font-size: $fz-3_xl;
+        }
       }
       &__content {
         flex: 1;
-        padding-left: 2.4rem;
+        padding-left: 1.2rem;
+        @include breakPoint($bp-lg) {
+          padding-left: 2.4rem;
+        }
         h3 {
-          font-size: $fz-2_xl;
+          font-size: $fz-1-2_xl;
           font-weight: $fw-regular;
           transition: 0.4s;
+          @include breakPoint($bp-lg) {
+            font-size: $fz-2_xl;
+          }
         }
         p {
-          @include limitLine;
+          @include limitLine(3);
         }
       }
       &__link {
@@ -172,6 +206,10 @@ html body section:nth-child(even):not(.slider) {
       }
       h3 {
         color: $c-white !important;
+        font-size: $fz-2_xl !important;
+        @include breakPoint($bp-lg) {
+          font-size: 2.6rem !important;
+        }
       }
     }
     // Contact Left Main
@@ -179,26 +217,42 @@ html body section:nth-child(even):not(.slider) {
       &-item {
         @include flexBox(flex-start, center);
         color: $c-white;
-        padding-block: 2.4rem;
+        padding-block: 1.2rem;
         border-bottom: 1px solid #aaa;
+        @include breakPoint($bp-sm) {
+          padding-block: 2.4rem;
+        }
         &:last-child {
           border-bottom: none;
         }
         &__icon {
-          font-size: $fz-4_xl;
+          font-size: $fz-3_xl;
+          @include breakPoint($bp-lg) {
+            font-size: $fz-4_xl;
+          }
         }
         &__content {
-          padding-left: 2.4rem;
+          padding-left: 1.6rem;
+          @include breakPoint($bp-lg) {
+            padding-left: 2.4rem;
+          }
           h3 {
             @include Text($fz-1_2_xl, $fw-regular, $c-white);
           }
           p {
-            @include Text($fz-lg, $fw-light, $c-white);
-            padding-top: 1.2rem;
-            @include limitLine;
+            @include Text($fz-md, $fw-light, $c-white);
+            padding-top: 0.6rem;
+            @include limitLine(3);
+            @include breakPoint($bp-lg) {
+              padding-top: 1.2rem;
+              font-size: $fz-lg;
+            }
             a {
-              @include Text($fz-lg, $fw-light, $c-white);
+              @include Text($fz-md, $fw-light, $c-white);
               opacity: 0.8;
+              @include breakPoint($bp-lg) {
+                font-size: $fz-lg;
+              }
             }
           }
         }
@@ -208,14 +262,20 @@ html body section:nth-child(even):not(.slider) {
   // Contact Right
   &-right {
     position: relative;
-    padding: 6rem;
+    padding: 4rem 3rem;
     border-radius: $border-radius;
     background-color: $c-theme-bg;
+    @include breakPoint($bp-lg) {
+      padding: 6rem;
+    }
     // Contact Right Header
     &-header {
       h3 {
-        font-size: $fz-3_xl;
+        font-size: $fz-2_xl;
         font-weight: $fw-regular;
+        @include breakPoint($bp-lg) {
+          font-size: $fz-3_xl;
+        }
       }
       p {
         margin-block: 1.2rem;
@@ -247,9 +307,6 @@ html body section:nth-child(even):not(.slider) {
         }
       }
     }
-    // Contact Right Footer
-    &-footer {
-    }
   }
 }
 
@@ -258,7 +315,9 @@ html body section:nth-child(even):not(.slider) {
   background-color: $c-theme-bg_grey !important;
   .heading-block {
     .container {
-      max-width: 800px;
+      @include breakPoint($bp-lg) {
+        max-width: 800px;
+      }
     }
   }
   //   Identity Main
@@ -267,23 +326,32 @@ html body section:nth-child(even):not(.slider) {
     &-item {
       position: relative;
       border-radius: $border-radius;
-      padding: 4rem 3rem;
+      padding: 2.4rem 1.6rem;
       background-color: $c-theme-bg;
       text-align: center;
       box-shadow: rgba(1, 1, 1, 0.05) 1px 1px 5px 0px;
       transition: 0.4s;
+      @include breakPoint($bp-lg) {
+        padding: 4rem 3rem;
+      }
       &__icon {
         font-size: $fz-5_xl;
         color: $c-primary;
       }
       &__content {
         h3 {
-          @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
+          @include Text($fz-1-2_xl, $fw-regular, $c-theme-heading);
           transition: 0.4s;
+          @include breakPoint($bp-lg) {
+            font-size: $fz-2_xl;
+          }
         }
         p {
-          margin-top: 2.4rem;
+          margin-top: 1.2rem;
           @include limitLine(3);
+          @include breakPoint($bp-lg) {
+            margin-top: 2.4rem;
+          }
         }
       }
       &__link {
