@@ -1,0 +1,81 @@
+@import "../Base/reset";
+@import "../Components/btn";
+@import "../Components/headingBlock";
+
+@import "../Layouts/header";
+@import "../Layouts/slider";
+
+// Slider
+.slider {
+  .carousel-item {
+    img {
+      height: 268px;
+      object-position: top;
+      @include breakPoint($bp-lg) {
+        height: 385px;
+      }
+    }
+  }
+  .carousel-caption {
+    transform: translateY(4rem) !important;
+    h1 {
+      width: 100% !important;
+      font-size: $fz-3_xl !important;
+      text-align: center !important;
+      @include breakPoint($bp-lg) {
+        font-size: 5rem !important;
+      }
+    }
+    p {
+      width: 100% !important;
+      opacity: 0.6 !important;
+      text-align: center !important;
+      margin-block: 0.8rem !important;
+      @include breakPoint($bp-lg) {
+        margin-block: 2.4rem !important;
+      }
+    }
+  }
+}
+
+// Element
+.element {
+  .heading-block {
+    h3 {
+      font-size: $fz-2_xl;
+    }
+  }
+  &-example {
+    padding: 6.4rem 3.2rem;
+    background-color: $c-theme-bg_grey;
+    h1 {
+      font-size: $fz-5_xl;
+      font-weight: $fw-regular;
+      color: $c-theme-heading;
+    }
+    p {
+      @include Text($fz-md, $fw-light_extra, $c-theme-font);
+      opacity: 0.8;
+    }
+  }
+  &-code {
+    background-color: $c-theme-bg_grey;
+    border-radius: $border-radius;
+    padding: 2rem 3rem;
+    &-pre {
+      padding: 2.5rem;
+      color: #666;
+      display: block;
+      font-size: $fz-md;
+      &-html {
+        .s,
+        .na {
+          color: $c-theme-font;
+        }
+      }
+    }
+  }
+}
+
+@import "../Layouts/footer";
+@import "../Components/btnToTop";
