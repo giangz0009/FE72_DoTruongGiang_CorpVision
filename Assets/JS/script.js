@@ -65,4 +65,5 @@ const headerNavBtn = header.querySelector(".navbar-toggler");
 
 headerNavBtn.onclick = () => {
   header.classList.toggle("open-nav");
+  var pp = document.querySelectorAll("p");
 };

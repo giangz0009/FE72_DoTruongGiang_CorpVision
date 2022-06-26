@@ -1,6 +1,7 @@
 @import "../Base/reset";
 @import "../Components/btn";
 @import "../Components/headingBlock";
+@import "../Components/cardItem";
 
 @import "../Layouts/header";
 @import "../Layouts/slider";
@@ -48,14 +49,46 @@
   &-example {
     padding: 6.4rem 3.2rem;
     background-color: $c-theme-bg_grey;
+    border-radius: $border-radius;
+    font-size: $fz-md;
     h1 {
-      font-size: $fz-5_xl;
+      font-size: $fz-2_xl;
       font-weight: $fw-regular;
       color: $c-theme-heading;
+      @include breakPoint($bp-lg) {
+        font-size: $fz-5_xl;
+      }
     }
     p {
       @include Text($fz-md, $fw-light_extra, $c-theme-font);
       opacity: 0.8;
+    }
+    span {
+      font-size: $fz-md;
+    }
+    input {
+      font-size: $fz-md;
+    }
+    &--light {
+      background-color: $c-theme-bg;
+      padding: 0;
+      nav[aria-label="breadcrumb"] {
+        background-color: $c-theme-bg_grey;
+        border-radius: $border-radius;
+        padding: 1.2rem 1.6rem;
+        margin-bottom: 1.2rem;
+        font-size: $fz-md;
+        a {
+          color: $c-primary;
+          &:hover {
+            color: $c-primary;
+            font-size: $fz-md;
+          }
+        }
+      }
+    }
+    &--both {
+      padding: 0 3rem;
     }
   }
   &-code {
@@ -75,6 +108,11 @@
       }
     }
   }
+}
+
+body > section:not(.slider) {
+  background-color: $c-theme-bg !important;
+  padding-block: 2rem !important;
 }
 
 @import "../Layouts/footer";
