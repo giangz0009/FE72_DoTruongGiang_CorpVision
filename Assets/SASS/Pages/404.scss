@@ -1,0 +1,117 @@
+@import "../Base/reset";
+@import "../Components/btn";
+@import "../Components/headingBlock";
+
+@import "../Layouts/header";
+@import "../Layouts/slider";
+
+// Slider
+.slider {
+  .carousel-item {
+    img {
+      height: 268px;
+      object-position: top;
+      @include breakPoint($bp-lg) {
+        height: 385px;
+      }
+    }
+  }
+  .carousel-caption {
+    transform: translateY(4rem) !important;
+    h1 {
+      width: 100% !important;
+      font-size: $fz-3_xl !important;
+      text-align: center !important;
+      @include breakPoint($bp-lg) {
+        font-size: 5rem !important;
+      }
+    }
+    p {
+      width: 100% !important;
+      opacity: 0.6 !important;
+      text-align: center !important;
+      margin-block: 0.8rem !important;
+      @include breakPoint($bp-lg) {
+        margin-block: 2.4rem !important;
+      }
+    }
+  }
+}
+
+// Content
+.content {
+  .container {
+    @include breakPoint($bp-lg) {
+      max-width: 850px;
+    }
+  }
+  &-left {
+    img {
+      max-width: 80%;
+    }
+  }
+  &-right {
+    &-header {
+      h1 {
+        @include Text(6rem, $fw-bold, $c-primary);
+        @include breakPoint($bp-lg) {
+          font-size: 12rem;
+        }
+      }
+    }
+    &-main {
+      .heading-block {
+        h3 {
+          font-size: $fz-2_xl;
+          margin-block: 1.8rem;
+          @include breakPoint($bp-lg) {
+            font-size: $fz-3_xl;
+          }
+        }
+      }
+      &-form {
+        @include flexBox(space-between, center);
+        border: 1px solid $c-theme-border__light;
+        border-radius: $border-radius;
+        background-color: $c-theme-bg;
+        overflow: hidden;
+        &__input {
+          flex: 1;
+          input {
+            display: block;
+            width: 100%;
+            padding: 1.6rem 2rem;
+            font-size: $fz-lg;
+            font-style: italic;
+            color: $c-theme-font;
+            border: none;
+            outline: none;
+          }
+        }
+        &__btn {
+          padding: 1.6rem 2rem;
+          height: 100%;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+    &-footer {
+      a {
+        margin-top: 6rem;
+        display: block;
+        @include Text($fz-lg, $fw-regular, $c-theme-heading);
+        transition: 0.4s;
+        i {
+          width: 3rem;
+        }
+        &:hover {
+          color: $c-primary;
+        }
+      }
+    }
+  }
+}
+
+@import "../Layouts/footer";
+@import "../Components/btnToTop";

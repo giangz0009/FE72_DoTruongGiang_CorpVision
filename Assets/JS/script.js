@@ -21,18 +21,35 @@ headerCloseSearchBtn.onclick = () => {
 };
 
 // -------- Toggle Switch for Dark and Light Theme
+const localThemeKey = "themeType";
 const htmlElement = $("html");
 const themeCheckBox = header.querySelector(".header-theme #themeCheckbox");
+let isDarkTheme = getLocalTheme(localThemeKey) || false;
+
+renderTheme();
 
 themeCheckBox.onchange = function () {
-  const isDarkTheme = this.checked;
+  isDarkTheme = this.checked;
+  setLocalTheme(localThemeKey, isDarkTheme);
+  renderTheme();
+};
 
+function getLocalTheme(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+
+function setLocalTheme(key, value) {
+  let stringValue = JSON.stringify(value);
+  localStorage.setItem(key, stringValue);
+}
+
+function renderTheme() {
   if (isDarkTheme) {
     htmlElement.dataset.theme = "dark";
   } else {
     htmlElement.dataset.theme = "light";
   }
-};
+}
 
 // Handle Event ScrollY
 const vh = Math.max(
