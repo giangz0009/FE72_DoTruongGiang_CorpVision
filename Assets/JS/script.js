@@ -46,8 +46,10 @@ function setLocalTheme(key, value) {
 function renderTheme() {
   if (isDarkTheme) {
     htmlElement.dataset.theme = "dark";
+    themeCheckBox.checked = true;
   } else {
     htmlElement.dataset.theme = "light";
+    themeCheckBox.checked = false;
   }
 }
 
