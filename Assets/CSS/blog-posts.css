@@ -1157,6 +1157,10 @@ html body span {
   color: #fff;
 }
 
+.blog .paginate .pager .disabled {
+  display: none;
+}
+
 .blog .paginate .pager .pageNumbers a {
   padding: 0.6rem 1.4rem;
   border: 2px solid var(--border-color-light);

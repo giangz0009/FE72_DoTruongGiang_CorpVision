@@ -94,6 +94,9 @@
           color: $c-white;
         }
       }
+      .disabled {
+        display: none;
+      }
       .pageNumbers {
         a {
           padding: 0.6rem 1.4rem;
