@@ -1,8 +1,862 @@
-@import "../Base/reset";
-@import "../Components/btn";
+@import "./../Base/reset";
+@import "./../Components/btn";
+@import "./../Components/headingBlock";
+@import "./../Components/cardItem";
+@import "./../Components/cardImgBottom";
 
-@import "../Layouts/header";
-@import "../Layouts/slider";
+@import "./../Layouts/header";
+@import "./../Layouts/slider";
 
-@import "../Layouts/footer";
-@import "../Components/btnToTop";
+// About Us
+.about-us {
+  background-color: $c-theme-bg;
+  // Left
+  &-left {
+    &__content {
+      p {
+        @include Text($fz-md, $fw-light, $c-theme-font);
+        line-height: 2.7rem;
+        opacity: 0.8;
+      }
+      ul {
+        margin-top: 0.8rem;
+        li {
+          a {
+            display: block;
+            @include Text($fz-sm, $fw-regular, $c-theme-heading);
+            padding-block: 0.4rem;
+            line-height: 2.8rem;
+            @include breakPoint($bp-sm) {
+              padding-block: 0.8rem;
+              font-size: $fz-lg;
+            }
+            i {
+              display: inline-block;
+              color: $c-primary;
+              opacity: 0.8;
+              margin-right: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  // Right
+  &-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    --start-col-pos: auto;
+    --end-col-pos: auto;
+    --start-row-pos: auto;
+    --end-row-pos: auto;
+    &__item {
+      grid-column: var(--start-col-pos) / var(--end-col-pos);
+      grid-row: var(--start-row-pos) / var(--end-row-pos);
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: $border-radius;
+      }
+      &:first-child {
+        img {
+          transform: translateY(-25px);
+        }
+      }
+    }
+  }
+}
+// Company
+.company {
+  // Company Left
+  &-left {
+    &-wrap {
+      position: relative;
+      display: inline-block;
+      img {
+        position: relative;
+        z-index: 2;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        box-shadow: 0 15px 38px 0 rgba(0, 0, 0, 0.2);
+      }
+      &__shape {
+        border-radius: 25% 70% 84% 22% / 42% 75% 25% 75%;
+        box-shadow: 0 15px 38px 0 rgba(0, 0, 0, 0.2);
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: $c-primary;
+        opacity: 0.4;
+      }
+      &__info {
+        position: absolute;
+        z-index: 5;
+        right: 20%;
+        bottom: 0;
+        min-width: 100px;
+        min-height: 100px;
+        box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.2);
+        background-color: $c-primary;
+        border-radius: $border-radius;
+        text-align: center;
+        @include flexBox(center, center);
+        flex-direction: column;
+        transform: translateX(25%) rotate(-45deg);
+        padding: 2rem;
+        @include breakPoint($bp-md) {
+          min-width: 200px;
+          min-height: 200px;
+          padding: 3.5rem;
+          right: 20%;
+        }
+        @include breakPoint($bp-xl) {
+          right: 0;
+        }
+        &-content {
+          transform: rotate(45deg);
+          h3 {
+            color: $c-white;
+            font-size: $fz-3_xl;
+            @include breakPoint($bp-lg) {
+              font-size: $fz-4_xl;
+            }
+          }
+          p {
+            color: $c-white;
+            opacity: 0.8;
+            font-size: $fz-1_2_xl;
+            @include breakPoint($bp-lg) {
+              font-size: $fz-2_xl;
+            }
+          }
+        }
+      }
+    }
+  }
+  // Company Right
+  &-right {
+    margin-top: 4.8rem;
+    @include breakPoint($bp-lg) {
+      margin-top: 0;
+    }
+    // Company Right Main
+    &-main {
+      margin-top: 2.4rem;
+      h5 {
+        @include Text($fz-2_xl, $fw-light, $c-theme-heading);
+      }
+      p {
+        @include Text($fz-md, $fw-light, $c-theme-font);
+        margin-top: 2.4rem;
+        opacity: 0.8;
+      }
+    }
+    // Company Right Footer
+    &-footer {
+      @include flexBox(flex-start, center);
+      margin-top: 4.8rem;
+      a.btn {
+        margin-right: 2.4rem;
+        padding-block: 1rem;
+      }
+      &__play-video {
+        display: inline-flex;
+        width: 5.5rem;
+        height: 5.5rem;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid $c-primary;
+        border-radius: 50%;
+        @include breakPoint($bp-lg) {
+          width: 7rem;
+          height: 7rem;
+        }
+        span {
+          display: inline-block;
+          color: $c-primary;
+          font-size: $fz-3_xl;
+          transition: 0.4s;
+        }
+        &:hover {
+          span {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+  //   Company Footer
+  &-footer {
+    margin-top: 4.8rem;
+    @include breakPoint($bp-lg) {
+      margin-top: 10rem;
+    }
+    &-item {
+      background-color: $c-theme-bg_grey;
+      overflow: hidden;
+      border-radius: $border-radius;
+      @include flexBox(space-between, flex-start);
+      padding: 4rem 3.5rem;
+      position: relative;
+      &__icon {
+        h1 {
+          font-size: $fz-3_xl;
+          color: $c-primary;
+          width: 4rem;
+          @include breakPoint($bp-lg) {
+            width: 6rem;
+            font-size: $fz-4_xl;
+          }
+        }
+      }
+      &__content {
+        flex: 1;
+        min-height: 100px;
+        @include breakPoint($bp-lg) {
+          min-height: 140px;
+        }
+        h3 {
+          @include Text($fz-1-2_xl, $fw-regular, $c-theme-heading);
+          margin-bottom: 1rem;
+          line-height: 1.6;
+          @include limitLine;
+          transition: 0.4s;
+          @include breakPoint($bp-lg) {
+            font-size: $fz-2_xl;
+            margin-bottom: 1.5rem;
+          }
+        }
+        p {
+          @include Text($fz-md, $fw-light, $c-theme-font);
+          line-height: 1.6;
+          @include limitLine;
+          opacity: 0.8;
+        }
+      }
+      &__link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+      }
+      &:hover {
+        .company-footer-item__content h3 {
+          color: $c-primary;
+        }
+      }
+    }
+  }
+}
+// Feature
+.feature {
+  background-color: $c-theme-bg_grey;
+  // Feature Left
+  &-left {
+    &__content {
+      p {
+        @include Text($fz-md, $fw-light, $c-theme-font);
+        line-height: 2.7rem;
+        opacity: 0.8;
+      }
+      &-btn {
+        margin-top: 3rem;
+        @include breakPoint($bp-lg) {
+          margin-top: 4.8rem;
+        }
+      }
+    }
+  }
+  // Feature Right
+  &-right {
+    &-item {
+      position: relative;
+      background-color: $c-theme-bg;
+      box-shadow: rgba(1, 1, 1, 0.05) 1px 1px 5px 0px;
+      border-radius: $border-radius;
+      transition: 0.3s;
+      &__wrap {
+        padding: 2.4rem 1.6rem;
+        @include flexBox(center, center);
+        flex-direction: column;
+        @include breakPoint($bp-lg) {
+          padding: 4rem 3rem;
+        }
+      }
+      &__icon {
+        color: $c-primary;
+        font-size: $fz-4_xl;
+        @include breakPoint($bp-sm) {
+          font-size: $fz-5_xl;
+        }
+      }
+      &__text {
+        p {
+          margin-top: 2.5rem;
+          @include Text($fz-lg, $fw-regular, $c-theme-heading);
+          line-height: 2.8rem;
+          transition: 0.3s;
+          @include breakPoint($bp-sm) {
+            font-size: $fz-2_xl;
+          }
+        }
+      }
+      &__link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        text-indent: -1000rem;
+      }
+      &:hover {
+        box-shadow: rgba(46, 41, 51, 0.08) 0px 2px 4px,
+          rgba(71, 63, 79, 0.16) 0px 5px 10px;
+        transform: translateY(-0.4rem);
+        .feature-right-item__text p {
+          color: $c-primary;
+        }
+      }
+    }
+  }
+}
+// Gallery
+.gallery {
+  &-footer {
+    &-wrap {
+      border-top: 1px solid $c-theme-border__light;
+    }
+    &-item {
+      padding-inline: 1rem;
+    }
+  }
+}
+// Progress Info
+.progress-info {
+  // Left
+  &-left {
+    overflow: hidden;
+    border-radius: $border-radius;
+  }
+  // Right
+  &-right {
+    &-main {
+      &-progress {
+        &-item {
+          display: block;
+          padding-block: 1.2rem;
+          .progress-title {
+            @include Text($fz-lg, $fw-light, $c-theme-heading);
+            margin-bottom: 1rem;
+            text-transform: capitalize;
+          }
+          .progress {
+            background-color: $c-theme-bg_grey;
+            height: 0.4rem;
+            overflow: visible;
+            &-bar {
+              position: relative;
+              overflow: visible;
+              color: #61fded;
+              background-color: #0d8abc;
+              background-image: linear-gradient(-224deg, #0d8abc, #61fded);
+              span {
+                position: absolute;
+                display: inline-block;
+                bottom: calc(100% + 1rem);
+                right: 0;
+                font-size: $fz-md;
+                font-weight: $fw-light;
+              }
+              &::before,
+              &::after {
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                display: block;
+                content: " ";
+              }
+              &::before {
+                @include radiusBlock(2.8rem, 2.8rem);
+                border: 1px solid;
+                opacity: 0.3;
+                transform: translate(-25%, -50%);
+              }
+              &::after {
+                transform: translate(0, -50%);
+                border: 3px solid;
+                @include radiusBlock(1.3rem, 1.3rem);
+              }
+            }
+          }
+          &:nth-child(4n + 2) {
+            .progress-bar {
+              color: #eece90;
+              background-color: #d45529;
+              background-image: linear-gradient(-224deg, #d45529, #eece90);
+            }
+          }
+          &:nth-child(4n + 3) {
+            .progress-bar {
+              color: #5c51ff;
+              background-color: #f646a9;
+              background-image: linear-gradient(-224deg, #f646a9, #5c51ff);
+            }
+          }
+          &:nth-child(4n + 4) {
+            .progress-bar {
+              color: #e5529a;
+              background-color: #e77654;
+              background-image: linear-gradient(-224deg, #e77654, #e5529a);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Testimonial {
+.testimonial {
+  // Main
+  &-main {
+    &-content {
+      margin: auto;
+      padding-block: 2rem;
+      max-width: 900px;
+      @include breakPoint($bp-lg) {
+        padding: 4rem 3rem;
+      }
+      p {
+        @include Text($fz-lg, $fw-light, $c-theme-font);
+        line-height: 1.8;
+        text-align: center;
+        opacity: 0.8;
+        margin-bottom: 2.4rem;
+      }
+      &-des {
+        @include flexBox(center, center);
+        &__img {
+          display: inline-block;
+          @include radiusBlock(7rem, 7rem);
+          overflow: hidden;
+        }
+        &__info {
+          display: inline-block;
+          margin-left: 2rem;
+          height: 100%;
+          h3 {
+            text-transform: capitalize;
+            @include Text($fz-1-2_xl, $fw-regular, $c-theme-heading);
+          }
+          span {
+            @include Text($fz-md, $fw-light, $c-theme-font);
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    .owl-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 3rem;
+      .owl-dot {
+        padding: 0.1rem 0.6rem !important;
+        span {
+          @include radiusBlock(1rem, 1rem);
+          background-color: $c-secondary;
+          opacity: 0.5;
+          transition: 0.3s;
+          display: block;
+          margin: 0.5rem 0.2rem;
+        }
+        &.active {
+          span {
+            opacity: 1;
+            transform: scale(1.5);
+          }
+        }
+        &:hover {
+          span {
+            transform: scale(1.5);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+// Web
+.web {
+  // Web Left
+  &-left {
+    &-main {
+      padding-top: 2.4rem;
+      &-item {
+        h1 {
+          @include Text($fz-3_xl, $fw-light, $c-primary);
+          @include breakPoint($bp-lg) {
+            font-size: $fz-4_xl;
+          }
+        }
+        h3 {
+          @include Text($fz-1-2_xl, $fw-regular, $c-theme-heading);
+          margin-block: 1rem;
+          @include breakPoint($bp-lg) {
+            margin-block: 2.4rem;
+            font-size: $fz-2_xl;
+          }
+        }
+        p {
+          @include Text($fz-md, $fw-light, $c-theme-font);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+  // Web Right
+  &-right {
+    &-item {
+      overflow: hidden;
+      border-radius: $border-radius;
+    }
+  }
+}
+// Generation
+.generation {
+  background-image: url("../Images/bg1.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: $c-theme-layer;
+  }
+  &-content {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+    h3 {
+      @include Text($fz-2_xl, $fw-regular, $c-white);
+      @include breakPoint($bp-lg) {
+        font-size: $fz-4_xl;
+      }
+    }
+    p {
+      @include Text($fz-sm, $fw-light, $c-white);
+      opacity: 0.8;
+      margin-block: 1rem;
+      @include breakPoint($bp-lg) {
+        margin-block: 2.4rem;
+      }
+    }
+    &__play {
+      &-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        @include radiusBlock(5.5rem, 5.5rem);
+        border: 3px solid $c-white;
+        transition: 0.4s;
+        @include breakPoint($bp-lg) {
+          @include radiusBlock(7rem, 7rem);
+        }
+        span {
+          font-size: $fz-2_xl;
+          color: $c-white;
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+// Professional
+.professional {
+  &-main {
+    padding-top: 2.4rem;
+    &-item {
+      padding-inline: 1rem;
+      @include breakPoint($bp-lg) {
+        padding-inline: 0;
+      }
+      .card-img-bottom {
+        border-radius: $border-radius;
+        &__overlay {
+          background-color: rgba(20, 20, 20, 0.7);
+        }
+        &__content {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          top: 0;
+          p {
+            text-align: center;
+            color: $c-white;
+            font-size: $fz-1_2_xl;
+          }
+          ul {
+            @include flexBox(space-between, flex-start);
+            li {
+              display: inline-block;
+              a {
+                display: inline-flex;
+                @include radiusBlock(37px, 37px);
+                align-items: center;
+                justify-content: center;
+                transition: 0.4s;
+                &:hover {
+                  color: $c-white;
+                  background-color: rgba(255, 255, 255, 0.3);
+                }
+              }
+            }
+          }
+        }
+      }
+      &__title {
+        margin-top: 2.4rem;
+        h3 {
+          a {
+            display: block;
+            @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
+            text-align: center;
+            transition: 0.4s;
+            &:hover {
+              color: $c-primary;
+            }
+          }
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+// Contact
+.contact {
+  background-color: $c-theme-bg_grey !important;
+  // Contact Header
+  & > .heading-block {
+    .container {
+      @include breakPoint($bp-lg) {
+        max-width: 800px;
+      }
+    }
+  }
+  // Contact Main
+  &-main {
+    // Contact Main Info
+    &-info {
+      padding-block: 1.2rem;
+      @include breakPoint($bp-lg) {
+        padding-block: 2.4rem;
+      }
+      &-item {
+        height: 100%;
+        background-color: $c-theme-bg;
+        border-radius: $border-radius;
+        overflow: hidden;
+        padding: 3rem;
+        box-shadow: rgba(1, 1, 1, 0.05) 1px 1px 5px 0px;
+        @include flexBox;
+        transition: 0.4s;
+        &__icon {
+          font-size: $fz-4_xl;
+          color: $c-theme-heading;
+          transition: 0.4s;
+        }
+        &__content {
+          padding-left: 2.4rem;
+          h3 {
+            @include Text($fz-2_xl, $fw-regular, $c-theme-heading);
+            transition: 0.4s;
+          }
+          p {
+            @include limitLine(3);
+            a {
+              display: block;
+              @include Text($fz-md, $fw-light, $c-theme-font);
+              opacity: 0.8;
+              transition: 0.4s;
+              &:hover {
+                color: $c-primary;
+              }
+            }
+          }
+        }
+        &:hover {
+          cursor: pointer;
+          transform: translateY(-0.25rem);
+          .contact-main-info-item__icon {
+            color: $c-primary;
+          }
+          h3 {
+            color: $c-primary;
+          }
+        }
+      }
+    }
+    // Contact Main Map
+    &-map {
+      padding-block: 2.4rem;
+      @include breakPoint($bp-lg) {
+        padding-block: 3.6rem;
+      }
+      iframe {
+        width: 100%;
+        min-height: 270px;
+        @include breakPoint($bp-lg) {
+          min-height: 400px;
+        }
+      }
+    }
+  }
+  // Contact Footer
+  &-footer {
+    margin-top: 2.4rem;
+    @include breakPoint($bp-lg) {
+      margin-top: 3.6rem;
+    }
+    &-main {
+      padding-top: 1.2rem;
+      margin: auto;
+      @include breakPoint($bp-lg) {
+        max-width: 900px;
+        padding-top: 2.4rem;
+      }
+      &__input {
+        input,
+        textarea {
+          border-radius: $border-radius;
+          border: 1px solid $c-theme-border__light;
+          width: 100%;
+          height: 100%;
+          padding: 1.6rem 2rem;
+          font-size: $fz-lg;
+          outline: none;
+          @include breakPoint($bp-lg) {
+            padding: 2rem 2.5rem;
+          }
+          &:focus {
+            background-color: transparent;
+            border-color: $c-theme-heading;
+          }
+        }
+      }
+      &__btn {
+        width: 100%;
+        text-align: center;
+        @include breakPoint($bp-lg) {
+          text-align: right;
+          padding-top: 1.2rem;
+        }
+        .btn {
+          width: 100%;
+          @include breakPoint($bp-sm) {
+            width: auto;
+            padding-inline: 5rem;
+          }
+        }
+      }
+    }
+  }
+}
+// Newsletter
+.newsletter {
+  background-image: url(../Images/map.png) !important;
+  background-color: #151421 !important;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  // Header
+  &-header {
+    text-align: center;
+    h3 {
+      color: $c-white;
+      margin-bottom: 2rem;
+      font-size: 2.6rem;
+      @include breakPoint($bp-lg) {
+        font-size: $fz-4_xl;
+      }
+    }
+    p {
+      color: $c-white;
+      max-width: 700px;
+      opacity: 0.7;
+      margin: auto;
+      font-size: $fz-md;
+    }
+  }
+  // Main
+  &-main {
+    margin-top: 6rem;
+    &-wrap {
+      max-width: 600px;
+      margin: auto;
+      @include flexBox(flex-start, center);
+      background-color: rgba(0, 0, 0, 0.25);
+      label {
+        display: inline-block;
+        padding: 1.2rem 1.5rem;
+        color: #999;
+        font-size: $fz-sm;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+        cursor: pointer;
+      }
+      &__input-group {
+        flex: 1;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          padding: 1.2rem 2rem;
+          font-size: $fz-sm;
+          color: $c-white;
+        }
+      }
+      button.btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+// Light Box
+#lightbox {
+  .lb-dataContainer {
+    padding-block: 2rem;
+    .lb-caption {
+      @include Text($fz-lg, $fw-regular, $c-white);
+    }
+    .lb-number {
+      @include Text($fz-md, $fw-light, $c-primary);
+      margin-top: 2rem;
+    }
+  }
+}
+
+@import "./../Layouts/footer";
+@import "./../Components/btnToTop";
