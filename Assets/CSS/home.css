@@ -1573,6 +1573,14 @@ html body span {
 .card-item-header img {
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  height: auto;
+}
+
+@media screen and (min-width: 992px) {
+  .card-item-header img {
+    height: 220px;
+    width: 100%;
+  }
 }
 
 .card-item-body {

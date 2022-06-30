@@ -5,6 +5,11 @@
     overflow: hidden;
     img {
       transition: 0.5s;
+      height: auto;
+      @include breakPoint($bp-lg) {
+        height: 220px;
+        width: 100%;
+      }
     }
   }
   &-body {
